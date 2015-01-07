@@ -1,0 +1,11 @@
+﻿
+@section scripts
+{
+    <script>
+        $(function () {
+            $.getJSON('/api/values/1?timestamp=' + new Date().getTime(), function (data) {
+                alert(data);
+            });
+        });
+    </script>
+}
