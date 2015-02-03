@@ -1,12 +1,13 @@
 ﻿using System;
+using DI04.Services.Contracts;
 
 namespace DI04.Services
 {
-    public class OrderHandler : IOrderHandler
+    public class OrderHandlerNormal : IOrderHandler
     {
         private readonly IAccounting _accounting;
         private readonly ISales _sales;
-        public OrderHandler(IAccounting accounting, ISales sales)
+        public OrderHandlerNormal(IAccounting accounting, ISales sales)
         {
             Console.WriteLine("OrderHandler ctor.");
             _accounting = accounting;

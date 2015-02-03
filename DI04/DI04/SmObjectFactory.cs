@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using DI04.Services;
+using DI04.Services.Contracts;
 using StructureMap;
 
 namespace DI04
@@ -21,9 +22,16 @@ namespace DI04
             {
                 x.For<IOrderHandler>().Use<OrderHandlerLazy>();
 
-                // Lazy loading
-                x.For<Lazy<IAccounting>>().Use(c => new Lazy<IAccounting>(c.GetInstance<Accounting>));
-                x.For<Lazy<ISales>>().Use(c => new Lazy<ISales>(c.GetInstance<Sales>));
+                x.Scan(scanner =>
+                {
+                    scanner.AssemblyContainingType<IOrderHandler>();
+                    // connects `IAccounting` to `Accounting` and `ISales` to `Sales` automatically.
+                    scanner.WithDefaultConventions();
+                });
+
+                // Manual lazy loading settings
+                //x.For<Lazy<IAccounting>>().Use(c => new Lazy<IAccounting>(c.GetInstance<Accounting>));
+                //x.For<Lazy<ISales>>().Use(c => new Lazy<ISales>(c.GetInstance<Sales>));
             });
         }
     }

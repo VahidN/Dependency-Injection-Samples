@@ -1,5 +1,5 @@
 ﻿
-namespace DI04.Services
+namespace DI04.Services.Contracts
 {
     public interface ISales
     {
