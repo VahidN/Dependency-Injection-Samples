@@ -1,5 +1,4 @@
-﻿using DI04.Services;
-using DI04.Services.Contracts;
+﻿using DI04.Services.Contracts;
 
 namespace DI04
 {

@@ -7,7 +7,7 @@ namespace DI04.Services
     {
         public Sales()
         {
-            Console.WriteLine("Sales ctor.");
+            Console.WriteLine("Sales' ctor is called.");
         }
 
         public bool ShippingAllowed(int orderId)

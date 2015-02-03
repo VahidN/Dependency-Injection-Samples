@@ -9,7 +9,7 @@ namespace DI04.Services
         private readonly Lazy<ISales> _sales;
         public OrderHandlerLazy(Lazy<IAccounting> accounting, Lazy<ISales> sales)
         {
-            Console.WriteLine("OrderHandlerLazy ctor.");
+            Console.WriteLine("OrderHandlerLazy's ctor dependes on accounting and sales.");
             _accounting = accounting;
             _sales = sales;
         }
