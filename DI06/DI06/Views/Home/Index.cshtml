@@ -4,5 +4,14 @@
 
 <h2>Index</h2>
 
-@Html.ActionLink("Go to admin area", actionName:"Index", controllerName: "Home",
+@Html.ActionLink("Go to admin area/Home/Index", actionName:"Index", controllerName: "Home",
                  routeValues: new { Area = "Admin" }, htmlAttributes: null)
+
+@Html.ActionLink("Go to admin area/Users/Index", actionName: "Index", controllerName: "Users",
+                 routeValues: new { Area = "Admin" }, htmlAttributes: null)
+
+@Html.ActionLink("Go to WebClients area/Home/Index", actionName: "Index", controllerName: "Home",
+                 routeValues: new { Area = "WebClients" }, htmlAttributes: null)
+
+@Html.ActionLink("Go to WebClients area/Users/Index", actionName: "Index", controllerName: "Users",
+                     routeValues: new { Area = "WebClients" }, htmlAttributes: null)
