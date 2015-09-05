@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Threading;
+using System.Web.Mvc;
+using DI06.CustomFilters;
 using DI06.Services;
 using DI06.Services.Contracts;
 using StructureMap;
+using StructureMap.Pipeline;
 
 namespace DI06.IocConfig
 {
@@ -21,7 +24,9 @@ namespace DI06.IocConfig
             return new Container(x =>
             {
                 x.For<IWebClientServices>().Use<WebClientServices>();
-                x.For<ILogActionService>().Use<LogActionService>();
+                x.For<ILogActionService>().LifecycleIs<TransientLifecycle>().Use<LogActionService>();
+
+                //x.For<IFilterProvider>().Use<StructureMapFilterProvider>();
 
                 x.Policies.SetAllProperties(y =>
                 {

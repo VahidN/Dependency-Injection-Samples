@@ -28,7 +28,7 @@ namespace DI06.Controllers
             _webClientServices = webClientServices;
         }
 
-        [Log]
+        //[Log]
         public ActionResult Index()
         {
             // ViewBag.PageTitle = _webClientServices.GetWebPageTitle("http://www.dotnettips.info/");
