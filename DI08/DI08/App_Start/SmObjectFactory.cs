@@ -17,10 +17,13 @@ namespace DI08
 
         private static Container defaultContainer()
         {
-            return new Container(x =>
+            var container = new Container(x =>
             {
                 x.For<IEmailsService>().Use<EmailsService>();
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

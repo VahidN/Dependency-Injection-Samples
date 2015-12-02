@@ -21,7 +21,7 @@ namespace DI06.IocConfig
 
         private static Container defaultContainer()
         {
-            return new Container(x =>
+            var container = new Container(x =>
             {
                 x.For<IWebClientServices>().Use<WebClientServices>();
                 x.For<ILogActionService>().LifecycleIs<TransientLifecycle>().Use<LogActionService>();
@@ -33,6 +33,9 @@ namespace DI06.IocConfig
                     y.OfType<ILogActionService>();
                 });
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

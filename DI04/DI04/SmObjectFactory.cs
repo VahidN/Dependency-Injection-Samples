@@ -18,7 +18,7 @@ namespace DI04
 
         private static Container defaultContainer()
         {
-            return new Container(x =>
+            var container = new Container(x =>
             {
                 x.For<IOrderHandler>().Use<OrderHandlerLazy>();
 
@@ -33,6 +33,9 @@ namespace DI04
                 //x.For<Lazy<IAccounting>>().Use(c => new Lazy<IAccounting>(c.GetInstance<Accounting>));
                 //x.For<Lazy<ISales>>().Use(c => new Lazy<ISales>(c.GetInstance<Sales>));
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

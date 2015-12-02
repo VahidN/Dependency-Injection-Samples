@@ -18,7 +18,7 @@ namespace DI07.Core
 
         private static Container defaultContainer()
         {
-            return new Container(cfg =>
+            var container = new Container(cfg =>
             {
                 cfg.For<ITestService>().Use<TestService>();
 
@@ -36,6 +36,9 @@ namespace DI07.Core
                     scan.WithDefaultConventions();
                 });
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

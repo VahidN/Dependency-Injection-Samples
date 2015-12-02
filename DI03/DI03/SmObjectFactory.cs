@@ -17,7 +17,7 @@ namespace DI03
 
         private static Container defaultContainer()
         {
-            return new Container(x =>
+            var container = new Container(x =>
             {
                 //x.For<IEmailsService>().Use<EmailsService>();
                 //x.For<IUsersService>().Singleton().Use<UsersService>();
@@ -27,6 +27,9 @@ namespace DI03
                     scan.WithDefaultConventions();
                 });
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

@@ -16,11 +16,14 @@ namespace WinFormsWithPluginSupport.Core
 
         private static Container defaultContainer()
         {
-            return new Container(x =>
+            var container = new Container(x =>
             {
                 x.AddRegistry<PluginsRegistry>();
                 // todo:  x.For<....>().Use<...>();
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

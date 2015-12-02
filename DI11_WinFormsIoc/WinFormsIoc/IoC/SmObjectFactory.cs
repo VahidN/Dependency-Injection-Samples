@@ -17,11 +17,14 @@ namespace WinFormsIoc.IoC
 
         private static Container defaultContainer()
         {
-            return new Container(cfg =>
+            var container = new Container(cfg =>
             {
                 cfg.For<IEmailsService>().Use<EmailsService>();
                 cfg.For<IFormFactory>().Use<FormFactory>();
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

@@ -18,16 +18,19 @@ namespace SameInterfaceDifferentClasses
 
         private static Container defaultContainer()
         {
-            return new Container(ioc =>
+            var container = new Container(ioc =>
             {
                 // map same interface to different concrete classes
                 ioc.For<IMessageService>().Use<SmsService>();
                 ioc.For<IMessageService>().Use<EmailService>();
 
                 ioc.For<IUsersManagerService>().Use<UsersManagerService>()
-                   .Ctor<IMessageService>("smsService").Is<SmsService>()
-                   .Ctor<IMessageService>("emailService").Is<EmailService>();
+                    .Ctor<IMessageService>("smsService").Is<SmsService>()
+                    .Ctor<IMessageService>("emailService").Is<EmailService>();
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

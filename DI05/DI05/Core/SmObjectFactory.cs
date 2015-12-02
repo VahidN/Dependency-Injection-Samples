@@ -17,7 +17,7 @@ namespace DI05.Core
 
         private static Container defaultContainer()
         {
-            return new Container(x =>
+            var container = new Container(x =>
             {
                 x.For<IUsersService>().Use<UsersService>();
 
@@ -26,6 +26,9 @@ namespace DI05.Core
                     y.OfType<IUsersService>();
                 });
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }

@@ -17,7 +17,7 @@ namespace DI10
 
         private static Container defaultContainer()
         {
-            return new Container(ioc =>
+            var container = new Container(ioc =>
             {
                 ioc.Scan(cfg =>
                 {
@@ -25,6 +25,9 @@ namespace DI10
                     cfg.ConnectImplementationsToTypesClosing(typeof(IHandler<>));
                 });
             });
+            container.AssertConfigurationIsValid();
+
+            return container;
         }
     }
 }
