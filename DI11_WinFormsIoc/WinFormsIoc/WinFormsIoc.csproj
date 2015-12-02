@@ -34,12 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="StructureMap, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\structuremap.3.0.3.116\lib\net40\StructureMap.dll</HintPath>
+    <Reference Include="StructureMap, Version=4.0.0.315, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\structuremap.4.0.0.315\lib\net40\StructureMap.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="StructureMap.Net4, Version=3.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\structuremap.3.0.3.116\lib\net40\StructureMap.Net4.dll</HintPath>
+    <Reference Include="StructureMap.Net4, Version=4.0.0.315, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\structuremap.4.0.0.315\lib\net40\StructureMap.Net4.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -75,6 +75,7 @@
     <Compile Include="IoC\FormFactory.cs" />
     <Compile Include="IoC\IFormFactory.cs" />
     <Compile Include="IoC\IoCConfig.cs" />
+    <Compile Include="IoC\SmObjectFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

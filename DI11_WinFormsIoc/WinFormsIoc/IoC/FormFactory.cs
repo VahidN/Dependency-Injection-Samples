@@ -1,5 +1,4 @@
 ﻿using System.Windows.Forms;
-using StructureMap;
 
 namespace WinFormsIoc.IoC
 {
@@ -7,7 +6,7 @@ namespace WinFormsIoc.IoC
     {
         public T Create<T>() where T : Form
         {
-            return ObjectFactory.GetInstance<T>();
+            return SmObjectFactory.Container.GetInstance<T>();
         }
     }
 }

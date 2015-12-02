@@ -15,7 +15,6 @@ namespace WinFormsIoc
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            IoCConfig.Bootstrap();
             Application.Run(IoCConfig.Resolve<Form1>());
         }
     }

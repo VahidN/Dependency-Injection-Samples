@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using PluginsBase;
 using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
+using StructureMap;
 
 namespace WinFormsWithPluginSupport.Core
 {
