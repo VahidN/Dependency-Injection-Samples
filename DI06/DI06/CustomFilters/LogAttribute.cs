@@ -1,4 +1,4 @@
-using System.Web.Mvc;
+ï»¿using System.Web.Mvc;
 using DI06.Services.Contracts;
 using StructureMap;
 
@@ -8,8 +8,8 @@ namespace DI06.CustomFilters
     {
         private readonly IContainer _container;
 
-        //äÈÇíÏ Èå Çíä ÕæÑÊ ÊÚÑíİ ÔæÏ æä ÏÑ İíáÊÑåÇí ÓÑÇÓÑí İŞØ íßÈÇÑ æåáå ÓÇÒí ÎæÇåÏ ÔÏ
-        //public ILogActionService LogActionService { get; set; }
+        //Ù†Ø¨Ø§ÙŠØ¯ Ø¨Ù‡ Ø§ÙŠÙ† ØµÙˆØ±Øª ØªØ¹Ø±ÙŠÙ Ø´ÙˆØ¯ Ú†ÙˆÙ† Ø¯Ø± ÙÙŠÙ„ØªØ±Ù‡Ø§ÙŠ Ø³Ø±Ø§Ø³Ø±ÙŠ ÙÙ‚Ø· ÙŠÙƒØ¨Ø§Ø± ÙˆÙ‡Ù„Ù‡ Ø³Ø§Ø²ÙŠ Ø®ÙˆØ§Ù‡Ø¯ Ø´Ø¯
+        //public ILogActionService LogActionService { get; set; } //TODO: use Func
 
         public LogAttribute(IContainer container)
         {

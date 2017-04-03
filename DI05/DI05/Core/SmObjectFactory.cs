@@ -30,5 +30,13 @@ namespace DI05.Core
 
             return container;
         }
+
+        public static void Initialize<T>() where T : Registry, new()
+        {
+            Container.Configure(x =>
+            {
+                x.AddRegistry<T>();
+            });
+        }
     }
 }
